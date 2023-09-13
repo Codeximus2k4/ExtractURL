@@ -1,4 +1,6 @@
 from typing import Optional
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from .db.mongo import connect_to_mongo 
 import openai
@@ -67,6 +69,8 @@ class ExtractURL():
     requirement: Optional[str]
     def extract_info(url : str):
         mylist = load_questions()
+        load_dotenv()
+        key = os.getenv('KEY')
         openai.api_key = "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"
         openai.Model.list()
         soup = extract_url(url)
