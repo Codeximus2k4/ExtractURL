@@ -1,0 +1,8 @@
+fastapi==0.101.1
+pydantic==2.3.0
+pydantic_core==2.6.3
+pymongo==4.5.0
+starlette==0.27.0
+bs4
+openai
+uvicorn==0.23.2
