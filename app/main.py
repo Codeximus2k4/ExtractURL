@@ -71,7 +71,7 @@ class ExtractURL():
         mylist = load_questions()
         load_dotenv()
         key = os.getenv('KEY')
-        openai.api_key = "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"
+        openai.api_key = key
         openai.Model.list()
         soup = extract_url(url)
         text = soup.text
