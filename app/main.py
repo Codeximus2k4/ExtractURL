@@ -147,7 +147,7 @@ class ExtractURL():
             if len(each)<=1:
                 continue
             info = each.split(':',maxsplit = 1)[1]
-            if (count>11) :
+            if (count>12) :
                 break
             if fields[count]=="type":
                 if "hỗ trợ khó khăn" in info.lower():
@@ -156,6 +156,8 @@ class ExtractURL():
                     scholar_dict[fields[count]]=2
                 elif "doanh nghiệp" in info.lower() or "tổ chức" in info.lower():
                     scholar_dict[fields[count]]=3
+                else:
+                    scholar_dict[fields[count]]=0
             elif fields[count]=="education_level":
                 level=""
                 if "trung cấp" in  info.lower():
@@ -173,7 +175,47 @@ class ExtractURL():
                     level = level + "4,"
                 if "tiến sĩ" in info.lower():
                     level = level +"5"
+                if len(level)==0:
+                    level = level +"0"
                 scholar_dict[fields[count]]=level
+            elif fields[count]=="majors":
+                majors =""
+                if "kiến trúc" in info.lower() or "xây dựng" in info.lower():
+                    majors = majors + "1,"
+                if "kinh doanh" in info.lower() or "thương mại" in info.lower():
+                    majors = majors + "2,"
+                if "công nghệ" in info.lower() or "thông tin" in info.lower():
+                    majors = majors +"3,"
+                if "luật" in info.lower() or "nhân văn" in info.lower():
+                    majors =majors + "4,"
+                if "báo chí" in info.lower() or "khoa học xã hội" in info.lower():
+                    majors = majors + "5,"
+                if "y tế" in info.lower():
+                    majors = majors + "6,"
+                if "khoa học cơ bản" in info.lower() or "cơ bản" in info.lower():
+                    majors =majors +"7,"
+                if "sư phạm" in info.lower():
+                    majors = majors + "8"
+                if len(majors)==0:
+                    majors = majors + "0"
+                scholar_dict[fields[count]]=majors
+            elif fields[count]=="address":
+                address =""
+                if "miền bắc" in info.lower():
+                    address = address+"1,"
+                if "miền nam" in info.lower():
+                    address = address + "2,"
+                if "miền trung" in info.lower():
+                    address = address + "3,"
+                if "châu á" in info.lower():
+                    address = address + "4,"
+                if "châu âu" in info.lower():
+                    address = address+ "5,"
+                if "mỹ" in info.lower():
+                    address = address + "6,"
+                if len(address)==0:
+                    address = address + "0"
+                scholar_dict[fields[count]]=address
             else:
                 scholar_dict[fields[count]]=info
             count=count+1
