@@ -17,14 +17,14 @@ def load_questions():
         questions = questions +lines
     q.close()
     questions_list.append(questions)
-    q = open("questions-form2.txt","r",encoding = "utf8")
+    q = open("questions-form6.txt","r",encoding = "utf8")
     #general questions2
     questions2 =""
     for lines in q:
         questions2 = questions2 +lines
     q.close()
     questions_list.append(questions2)
-    q = open("questions-form3.txt","r",encoding="utf8")
+    q = open("questions-form7.txt","r",encoding="utf8")
     questions3 =""
     for lines in q:
         questions3 = questions3 +lines
