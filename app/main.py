@@ -180,7 +180,7 @@ class ExtractURL():
                     address = address + "4,"
                 if "châu âu" in info.lower():
                     address = address+ "5,"
-                if "mỹ" in info.lower():
+                if "mỹ" in info.lower() or "canada" in info.lower():
                     address = address + "6,"
                 if len(address)==0:
                     address = address + "0"
