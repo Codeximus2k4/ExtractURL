@@ -162,7 +162,9 @@ class ExtractURL():
                 if "khoa học tự nhiên" in info.lower() or "tự nhiên" in info.lower():
                     majors =majors +"7,"
                 if "sư phạm" in info.lower():
-                    majors = majors + "8"
+                    majors = majors + "8,"
+                if "kỹ thuật" in info.lower() or "công nghiệp" in info.lower():
+                    majors = majors + "9,"
                 if len(majors)==0:
                     majors = majors + "0"
                 scholar_dict[fields[count]]=majors
