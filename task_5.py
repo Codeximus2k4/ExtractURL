@@ -15,13 +15,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain import HuggingFaceHub
 from dateutil.parser import parse
 load_dotenv()
-def wrap_text_preserve_newlines(text,width=110):
-  lines = text.split('\n')
-  wrapped_lines = [textwrap.fill(line, width = width) for line in lines]
-  astring =""
-  for line in wrapped_lines:
-    astring = astring + line
-  return astring
+
 
 
 
