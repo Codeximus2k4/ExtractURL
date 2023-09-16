@@ -79,6 +79,8 @@ class ExtractURL():
             continue
         if "có" in answers[1].lower():
             scholar_dict["status"]=1
+        else :
+            scholar_dict["status"]=0
         row =[]
         completion = openai.ChatCompletion.create(
             model = "gpt-3.5-turbo",
