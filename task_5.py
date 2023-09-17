@@ -22,9 +22,6 @@ load_dotenv()
 
 llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
 
-key = "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"  
-openai.api_key=key
-
 openai.Model.list()
 
 q = open("questions-form.txt","r",encoding="utf8")
